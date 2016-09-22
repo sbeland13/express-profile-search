@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    h2 Search Results
+    a(href="/" class="btn btn-primary") New Search
+    button.btn.btn-primary(onclick="history.back(-1)") Modify Current Search
+    each profile in testData
+      .media
+        .media-left
+          .img-cropper
+            a(href="#")
+              img.media-object(src="#{profile.photo_url}")
+        .media-body
+          h2 #{profile.name} 
+          p score: #{profile.score}%
+          .progress
+            .progress-bar.progress-bar-info(role="progressbar" aria-valuenow="#{profile.score}" aria-valuemin="0" aria-valuemax="100" style="width: #{profile.score}%")
+        
+      
+ 

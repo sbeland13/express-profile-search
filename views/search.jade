@@ -1,0 +1,37 @@
+extends layout
+
+block content
+        .container
+                form(name="search-profile", method="POST" action="/search-results" enctype="application/x-www-form-urlencoded")
+                        h2 Please Enter Your Search Criteria
+                        .form-group
+                                label Preferred Provider
+                                select.form-control(name="provider")
+                                        option.selected Select a Provider
+                                        each provider in providerList
+                                                option(value=provider) #{provider}
+                        .form-group
+                                label Country
+                                select.form-control(name="country")
+                                        option.selected Select a Country
+                                        each country in countryList
+                                                option(value=country) #{country}
+                                                
+                        .from-group
+                                label Select a Price
+                                .input-group
+                                        .input-group-addon $
+                                        input.form-control(type="text", name="price", placeholder="Amount")
+                                        .input-group-addon .00
+                        .from-group
+                                label Select a Rating
+                                .range.range-info
+                                        input(type="range" name="range" min="1" max="5" value="3" onchange="rangeInfo.value=value")
+                                        output(id="rangeInfo") 3
+                        .form-group
+                                label Select a Category
+                                select.form-control(name="category")
+                                        option.selected Select a Category
+                                        each category in categoryList
+                                                option(value=category) #{category}                                        
+                        input.btn.btn-large.btn-primary(type="submit" value="Search")
