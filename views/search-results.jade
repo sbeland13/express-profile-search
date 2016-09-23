@@ -2,9 +2,9 @@ extends layout
 
 block content
   .container
-    h2 Search Results
+    h2.text-center Search Results
     a(href="/" class="btn btn-primary") New Search
-    button.btn.btn-primary(onclick="history.back(-1)") Modify Current Search
+    button.btn.btn-small.btn-warning(onclick="history.back(-1)") Modify Current Search
     each profile in testData
       .media
         .media-left
