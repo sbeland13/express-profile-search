@@ -89,3 +89,7 @@ img {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+output {
+    height: 20px !important;
+}
