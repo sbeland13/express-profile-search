@@ -1,21 +1,25 @@
 extends layout
 
 block content
-  .container
-    h2.text-center Search Results
-    a(href="/" class="btn btn-primary") New Search
-    button.btn.btn-small.btn-warning(onclick="history.back(-1)") Modify Current Search
-    each profile in testData
-      .media
-        .media-left
-          .img-cropper
-            a(href="#")
-              img.media-object(src="#{profile.photo_url}")
-        .media-body
-          h2 #{profile.name} 
-          p score: #{profile.score}%
-          .progress
-            .progress-bar.progress-bar-info(role="progressbar" aria-valuenow="#{profile.score}" aria-valuemin="0" aria-valuemax="100" style="width: #{profile.score}%")
+  .container-fluid
+    .row.heading
+      .col-md-6
+        h1 Search Results
+      .col-md-6.buttons-top
+        a(href="/" class="btn btn-default") New Search
+        button.btn.btn-small.btn-primary(onclick="history.back(-1)") Modify Search
+    .row
+      each profile in testData
+        .media
+          .media-left
+            .img-cropper
+              a(href="#")
+                img.media-object(src="#{profile.photo_url}")
+          .media-body
+            h2 #{profile.name} 
+            p score: #{profile.score}%
+            .progress.progress-striped.active
+              .progress-bar.progress-bar(role="progressbar" aria-valuenow="#{profile.score}" aria-valuemin="0" aria-valuemax="100" style="width: #{profile.score}%")
+          
         
-      
  

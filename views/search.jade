@@ -1,43 +1,45 @@
 extends layout
 
 block content
-        .container
-                h2.text-center Please Enter Your Search Criteria
-                form(name="search-profile", method="POST" action="/search-results")
-                        
-                        .form-group.col-md-6.col-md-offset-3
-                                label Preferred Provider
-                                select.form-control(name="provider")
-                                        option.selected Select a Provider
-                                        each provider in providerList
-                                                option(value=provider) #{provider}
-                        .form-group.col-md-6.col-md-offset-3
-                                label Country
-                                select.form-control(name="country")
-                                        option.selected Select a Country
-                                        each country in countryList
-                                                option(value=country) #{country}
-                        .form-group.col-md-6.col-md-offset-3
-                                label Category:
-                                select.form-control(name="category")
-                                        option.selected Select a Category
-                                        each category in categoryList
-                                                option(value=category) #{category}
-                                                
-                        .from-group.col-md-6.col-md-offset-3(id="price")
-                                label Price:
-                                .input-group
-                                        .input-group-addon $
-                                        input.form-control(type="text", name="price", placeholder="Enter an Amount")
-                                        .input-group-addon .00
-                        .from-group.col-md-6.col-md-offset-3(id="range")
-                                label Select a Rating: 
-                                
-                                .range.range-info
-                                        output(id="rangeInfo") 3
-                                        input(type="range" name="range" min="1" max="5" value="3" onchange="rangeInfo.value=value")
+        .container-fluid
+                .row
+                        .col-md-6.col-md-offset-3.form-wrapper
+                                h2.text-center Please Enter Your Search Criteria
+                                form(name="search-profile", method="POST" action="/search-results")
                                         
-                
-                        
-                        .form-group.col-md-6.col-md-offset-3(id="submit")                                       
-                                input.btn.btn-large.btn-block.btn-primary(type="submit" value="Search")
+                                        .form-group.col-md-8.col-md-offset-2
+                                                label Preferred Provider
+                                                select.form-control(name="provider")
+                                                        option.selected Select a Provider
+                                                        each provider in providerList
+                                                                option(value=provider) #{provider}
+                                        .form-group.col-md-8.col-md-offset-2
+                                                label Country
+                                                select.form-control(name="country")
+                                                        option.selected Select a Country
+                                                        each country in countryList
+                                                                option(value=country) #{country}
+                                        .form-group.col-md-8.col-md-offset-2
+                                                label Category:
+                                                select.form-control(name="category")
+                                                        option.selected Select a Category
+                                                        each category in categoryList
+                                                                option(value=category) #{category}
+                                                                
+                                        .from-group.col-md-8.col-md-offset-2(id="price")
+                                                label Price:
+                                                .input-group
+                                                        .input-group-addon $
+                                                        input.form-control(type="text", name="price", placeholder="Enter an Amount")
+                                                        .input-group-addon .00
+                                        .from-group.col-md-8.col-md-offset-2(id="range")
+                                                label Select a Rating: 
+                                                
+                                                .range.range-info
+                                                        output(id="rangeInfo") 3
+                                                        input(type="range" name="range" min="1" max="5" value="3" onchange="rangeInfo.value=value")
+                                                        
+                                
+                                        
+                                        .form-group.col-md-6.col-md-offset-3(id="submit")                                       
+                                                input.btn.btn-large.btn-block.btn-primary(type="submit" value="Search")

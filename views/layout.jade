@@ -6,11 +6,19 @@ html
     link(type="text/css", rel="stylesheet", href="/css/bootstrap.min.css")
     link(type="text/css", rel='stylesheet', href='/css/creative.css')
   body
-    block content
-    script(src='/js/jquery.js')
-    script(src='/js/bootstrap.min.js')
-    script(src='/js/custom.js')
-   
+    nav.navbar.navbar-default
+      .container
+          .navbar-header
+            a.navbar-brand(href="/") Profile Search
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+              li 
+                a(href="http://www.stephanebeland.com") by Stephane Beland		
+  block content
+  script(src='/js/jquery.js')
+  script(src='/js/bootstrap.min.js')
+  script(src='/js/custom.js')
+
 
 
     
