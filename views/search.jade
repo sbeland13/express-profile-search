@@ -5,33 +5,34 @@ block content
                 .row
                         .col-md-8.col-md-offset-2.form-wrapper
                                 h2.text-center Please Enter Your Search Criteria
-                                form(name="search-profile", id="search-profile", method="POST" action="/search-results")
+                                form(role="form", name="search-profile", id="search-profile", method="POST" action="/search-results" )
                                         
                                         .form-group.col-md-8.col-md-offset-2
-                                                label Provider
-                                                select.form-control(name="provider")
+                                                label.control-label Provider
+                                                select.form-control(name="provider" required)
                                                         option(value="") Please Select a Provider
                                                         each provider in providerList
                                                                 option(value=provider) #{provider}
                                         .form-group.col-md-8.col-md-offset-2
-                                                label Country
-                                                select.form-control(name="country")
+                                                label.control-label Country
+                                                select.form-control(name="country" required)
                                                         option(value="") Please Select a Country
                                                         each country in countryList
                                                                 option(value=country) #{country}
                                         .form-group.col-md-8.col-md-offset-2
-                                                label Category:
-                                                select.form-control(name="category")
+                                                label.control-label Category:
+                                                select.form-control(name="category" required)
                                                         option(value="") Please Select a Category
                                                         each category in categoryList
                                                                 option(value=category) #{category}
                                                                 
                                         .from-group.col-md-8.col-md-offset-2(id="price")
-                                                label Please Enter a Price:
+                                                label.control-label Please Enter a Price:
                                                 .input-group
                                                         .input-group-addon $
-                                                        input.form-control(type="text", name="price", placeholder=" Amount")
+                                                        input.form-control(type="number", name="price", placeholder=" Amount" required)
                                                         .input-group-addon .00
+                                                
 
                                         .from-group.col-md-8.col-md-offset-2(id="range")
                                                 label Please Select a Rating: 
@@ -40,4 +41,4 @@ block content
                                                         input(id="range", type="range", name="range", min="1", max="5", value="1", onchange="rangeInfo.value=value")
 
                                         .form-group.col-md-6.col-md-offset-3(id="submit")                                       
-                                                input.btn.btn-large.btn-block.btn-primary(type="submit" value="Search")
+                                                button.btn.btn-large.btn-block.btn-primary(type="submit") Search

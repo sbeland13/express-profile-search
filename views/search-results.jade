@@ -15,12 +15,12 @@ block content
               img.media-object(src="#{profile.photo_url}")
           .media-body
             h2 #{profile.name}
-              button.btn.btn-sm.btn-primary(id="info-btn", data-toggle="collapse", data-target="#info-div")
+              button.btn.btn-sm.btn-primary(id="info-btn", data-toggle="collapse", data-target="##{profile.id}")
                 span.glyphicon.glyphicon-th-list 
             p score: #{profile.score}%
             .progress.progress-striped.active
               .progress-bar.progress-bar(role="progressbar" aria-valuenow="#{profile.score}" aria-valuemin="0" aria-valuemax="100" style="width: #{profile.score}%")
-            .collapse(id="info-div")
+            .collapse(id="#{profile.id}")
               .well
                 h4 Provider: <i>#{profile.provider}</i>
                 h4 Country:  <i>#{profile.country}</i>

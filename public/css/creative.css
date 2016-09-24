@@ -104,6 +104,16 @@ output {
     right: -15px;
 }
 
-.navbar-header {
-    font-family: 'Satisfy', cursive;
+.navbar {
+    border-radius: 0%;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy';
+    font-size: 2.0em !important;
+    margin-bottom: 10px;
+}
+
+.navbar li {
+    margin-top: 5px;
 }
