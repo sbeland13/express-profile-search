@@ -7,19 +7,26 @@ block content
         h1 Search Results
       .col-md-6.buttons-top
         a(href="/" class="btn btn-default") New Search
-        button.btn.btn-small.btn-primary(onclick="history.back(-1)") Modify Search
     .row
       each profile in testData
         .media
           .media-left
             .img-cropper
-              a(href="#")
-                img.media-object(src="#{profile.photo_url}")
+              img.media-object(src="#{profile.photo_url}")
           .media-body
-            h2 #{profile.name} 
+            h2 #{profile.name}
+              button.btn.btn-sm.btn-primary(id="info-btn", data-toggle="collapse", data-target="#info-div")
+                span.glyphicon.glyphicon-th-list 
             p score: #{profile.score}%
             .progress.progress-striped.active
               .progress-bar.progress-bar(role="progressbar" aria-valuenow="#{profile.score}" aria-valuemin="0" aria-valuemax="100" style="width: #{profile.score}%")
+            .collapse(id="info-div")
+              .well
+                h4 Provider: <i>#{profile.provider}</i>
+                h4 Country:  <i>#{profile.country}</i>
+                h4 Category: <i>#{profile.category_title}</i>
+                h4 Price:    <i>#{profile.price_cents}</i>
+                h4 Rating:   <i>#{profile.ratings}</i>
           
         
  

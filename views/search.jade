@@ -3,40 +3,40 @@ extends layout
 block content
         .container-fluid
                 .row
-                        .col-md-6.col-md-offset-3.form-wrapper
+                        .col-md-8.col-md-offset-2.form-wrapper
                                 h2.text-center Please Enter Your Search Criteria
-                                form(name="search-profile", method="POST" action="/search-results")
+                                form(name="search-profile", id="search-profile", method="POST" action="/search-results")
                                         
                                         .form-group.col-md-8.col-md-offset-2
-                                                label Preferred Provider
+                                                label Provider
                                                 select.form-control(name="provider")
-                                                        option.selected Select a Provider
+                                                        option(value="") Please Select a Provider
                                                         each provider in providerList
                                                                 option(value=provider) #{provider}
                                         .form-group.col-md-8.col-md-offset-2
                                                 label Country
                                                 select.form-control(name="country")
-                                                        option.selected Select a Country
+                                                        option(value="") Please Select a Country
                                                         each country in countryList
                                                                 option(value=country) #{country}
                                         .form-group.col-md-8.col-md-offset-2
                                                 label Category:
                                                 select.form-control(name="category")
-                                                        option.selected Select a Category
+                                                        option(value="") Please Select a Category
                                                         each category in categoryList
                                                                 option(value=category) #{category}
                                                                 
                                         .from-group.col-md-8.col-md-offset-2(id="price")
-                                                label Price:
+                                                label Please Enter a Price:
                                                 .input-group
                                                         .input-group-addon $
-                                                        input.form-control(type="text", name="price", placeholder="Enter an Amount")
+                                                        input.form-control(type="text", name="price", placeholder=" Amount")
                                                         .input-group-addon .00
+
                                         .from-group.col-md-8.col-md-offset-2(id="range")
-                                                label Select a Rating: 
-                                                
+                                                label Please Select a Rating: 
                                                 .range.range-default
-                                                        output(id="rangeInfo")
+                                                        output(id="rangeInfo") 1
                                                         input(id="range", type="range", name="range", min="1", max="5", value="1", onchange="rangeInfo.value=value")
 
                                         .form-group.col-md-6.col-md-offset-3(id="submit")                                       
